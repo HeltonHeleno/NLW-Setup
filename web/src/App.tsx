@@ -1,14 +1,28 @@
 import './styles/global.css';
+import { Plus } from 'phosphor-react'
 
-import { Habit } from "./components/Habit"
+//import { Habit } from "./components/Habit"
 
-function App() {
+import logoImage from "./assets/logo.svg"
+
+export function App() {
   return (
-    <div>
-      <Habit completed={3} />
-      <Habit completed={10}/>
-      <Habit completed={20}/>
-      <Habit completed={30}/>
+    <div className='w-screen h-screen flex justify-center items-center'>
+      <div className='w-full max-w-5xl px-6 flex flex-col gap-16'>
+
+        <div className='w-full max-w-3xl mx-auto flex items-center justify-between'>
+          <img src={logoImage} alt="Habits" />
+
+          <button 
+            type='button'
+            className='border border-violet-500 font-semibold rounded-lg px-6 py-4'
+          >
+            <Plus size={20} className='text-violet-500'/>
+            Novo hábito  
+          </button>
+        </div>
+      </div>
+  
       
     </div>
   )
@@ -16,5 +30,3 @@ function App() {
 
 export default App
 
-//componente: reaproveitar / isolar
-//propriedade: uma informação enviada pra modificar um conponente visual ou comportamentalmente
