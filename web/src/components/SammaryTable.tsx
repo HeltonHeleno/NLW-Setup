@@ -38,7 +38,7 @@ export function SammaryTable() {
     return (
         <div className="w-full flex">
             <div className="grid grid-rows-7 grid-flow-row gap-3">
-                {weekDays.map( (weekDay, i) => {
+                {weekDays.map((weekDay, i) => {
                     return (
                         <div 
                             key={`${weekDay}-${i}`} 
@@ -52,7 +52,7 @@ export function SammaryTable() {
             </div>
 
             <div className="grid grid-rows-7 grid-flow-col gap-3">
-               {summary.length > 0 && summaryDates.map(date => {
+               {summary.length && summaryDates.map((date) => {
                     const dayInSummary = summary.find(day =>{
                         return dayjs(date).isSame(day.date, 'day')
                     })
@@ -75,5 +75,5 @@ export function SammaryTable() {
                 })} 
             </div>
         </div>
-    )
+    );
 }
